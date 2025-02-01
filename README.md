@@ -4,7 +4,7 @@ This is a simple Palindrome Checker web application. It allows users to input a 
 
 ## Project Overview
 
-![Project Screenshot] (./127.0.0.1_5500_index.html%20(6).png)
+![Project Screenshot](./127.0.0.1_5500_index.html%20(6).png)
 
 ## Features
 
