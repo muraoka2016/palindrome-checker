@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <h1 id="main-title">Palindrome Checker</h1>
+        <label id="label-text" for="input-word">Insert the word or sentence</label>
+        <input type="text" id="input-word" name="input-word" required>
+        <button id="check-button">Check</button>
+    </main>
+</body>
+</html>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    body{
+        background: linear-gradient(to right, lightblue, aquamarine);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    h1{
+        font-family: 'Pacifico', cursive;
+        font-size: 50px;
+        color: white;
+    }
+
+    label{
+        font-family: 'Pacifico', cursive;
+        font-size: 30px;
+        color: white;
+    }
+
+    input {
+        font-family: 'Pacifico', cursive;
+        font-size: 20px;
+        padding: 10px;
+        border: 2px solid #00796b;
+        border-radius: 5px;
+        outline: none;
+        transition: border-color 0.3s ease;
+    }
+
+    button {
+        font-family: 'Pacifico', cursive;
+        font-size: 20px;
+        color: white;
+        background-color: #00796b;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #004d40;
+    }
+</style>
+<script>
+    
+    document.getElementById('check-button').addEventListener('click', ()=>{
+        let response = document.getElementById('label-text')
+        let word = document.getElementById('input-word').value
+        let cleanedWord = word.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+        let wordReverse = cleanedWord.split('').reverse().join('')  
+            if(cleanedWord =='') {
+                response.innerHTML = 'Invalid entry.'
+            } else if(cleanedWord === wordReverse){
+                response.innerHTML = 'It is a palindrome!'
+            } else{
+                response.innerText = 'It is not a palindrome!'
+            }
+    })
+</script>
